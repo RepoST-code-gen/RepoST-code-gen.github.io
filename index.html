@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="RepoST: Scalable Repository-Level Coding Environment Construction with Sandbox Testing">
+  <meta name="keywords" content="code generation, sandbox testing, repository-level">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RepoST: Scalable Repository-Level Coding Environment Construction with Sandbox Testing</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">RepoST: Scalable Repository-Level Coding Environment Construction with Sandbox Testing</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Yiqing Xie</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Alex Xie</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Divyanshu Sheth</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Pengfei Liu</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="#">Daniel Fried</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="#">Carolyn Rose</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Carnegie Mellon University,</span>
+            <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/RepoST-code-gen/RepoST"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Paper Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Data Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present RepoST, a scalable method to construct environments that provide execution feedback for repository-level code generation for both training and evaluation. Unlike existing works that aim to build entire repositories for execution, which is challenging for both human and LLMs, we provide execution feedback with sandbox testing, which isolates a given target function and its dependencies to a separate script for testing. Sandbox testing reduces the complexity of external dependencies and enables constructing environments at a large scale. We use our method to construct RepoST-Train, a large-scale train set with 7,415 functions from 832 repositories. Training with the execution feedback provided by RepoST-Train leads to a performance gain of 5.5% Pass@1 on HumanEval and 3.5% Pass@1 on RepoEval. We also build an evaluation dataset, RepoST-Eval, and benchmark 12 code generation models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- The RepoST Framework -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">The RepoST Framework</h2>
+        <div class="content has-text-justified">
+          <p>
+            RepoST is an automated framework that constructs repo-level coding environments using Sandbox Testing. Specifically, given a function in a GitHub repository, we sandbox the function and its local dependencies to a separate script and generate tests with an LLM.
+          </p>
+          <img src="static/images/figure1.png" alt="RepoST Framework Overview">
+          <p class="has-text-centered">Figure 1: Overview of the RepoST Framework</p>
+          
+          <h4 class="title is-4">Original GitHub Repo as Context</h4>
+          <p>
+            As shown in Figure 1, the models generate the target function with the entire GitHub repository as context. We then use the evaluation script to obtain execution feedback.
+          </p>
+
+          <h4 class="title is-4">High Scalability</h4>
+          <p>
+            Compared to integration testing used by previous datasets, we highlight the benefits of sandbox testing in constructing scalable coding environments:
+          </p>
+          <ul>
+            <li>In general, the external dependencies of a function are typically much simpler than a repository. By isolating the function and its local dependencies, we can execute the function by only installing the necessary packages.</li>
+            <li>If any execution error occurs, we can debug the separate scripts without modifying the original repository.</li>
+          </ul>
+
+          <h4 class="title is-4">Carefully-Designed Quality Check Strategies</h4>
+          <p>
+            We iteratively resolve environment or runtime errors and improve test coverage. We also conduct execution-based, AST-based, and LLM-based quality checks and only keep examples where the functionality of the sandboxed function does not alter and the tests are valid, reasonable, and have high coverage.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Training/Evaluation Environments -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Constructing Training / Evaluation Environments with RepoST</h2>
+        <div class="content has-text-justified">
+          <p>
+            With our framework, we build a train set and an evaluation set: RepoST-Train and RepoST-Eval.
+          </p>
+          <img src="static/images/figure2.png" alt="Training and Evaluation Environments">
+          <p class="has-text-centered">Figure 2: Training and Evaluation Environments Construction</p>
+
+          <p>
+            To our knowledge, RepoST-Train is currently the largest repo-level code generation dataset with execution support, with 7,415 functions sampled from 824 repositories. The large scale enables training on RepoST-Train and evaluating on other benchmarks such as RepoEval or HumanEval.
+          </p>
+
+          <p>
+            RepoST-Eval contains 296 functions sampled from 99 repositories. Because RepoST is fully automated, it can be potentially used to construct live benchmarks to avoid contamination issues.
+          </p>
+
+          <h4 class="title is-4">Human Studies</h4>
+          <p>
+            We conduct careful quality verification with two human studies:
+          </p>
+          <ul>
+            <li>The first human study demonstrates the agreement between human and LLM-based quality checkers, which indicates that after applying our filtering strategies for quality control, the remaining examples have high quality.</li>
+            <li>The second human study checks whether the examples are solvable by human. Results show that 81.5% of the examples were solved by human, indicating that most examples are reasonable and not too complicated.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Training Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments: Training with RepoST-Train</h2>
+        <div class="content has-text-justified">
+          <p>
+            With RepoST-Train, we can first train the model with supervised finetuning (SFT), with the code context as the input and the ground truth target function as the output. The execution feedback provided by our RepoST evaluation scripts allows us to employ the rejection sampling algorithm and further finetune the model on correct model-generated solutions.
+          </p>
+          <img src="static/images/table1.png" alt="Training Results">
+          <p class="has-text-centered">Table 1: Training Results on Different Benchmarks</p>
+
+          <p>We train our model with RepoST-Train and evaluate on HumanEval, RepoEval-Func, and RepoST-Eval. Results show that:</p>
+          <ul>
+            <li>Models trained with RepoST-Train can generalize well to other public benchmarks, including algorithm problems and repo-level code generation datasets. This demonstrates the effectiveness of constructing SFT training data.</li>
+            <li>Training with rejection sampling, even with self-training only, achieves better performance than vanilla SFT. This shows the benefit of training environments that can provide execution feedback.</li>
+            <li>The performance of Rej Sampling (Distill) increases as we scale up the training data. The results suggest the advantage of training datasets with high scalability.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Evaluation Results -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiments: Evaluation with RepoST-Eval</h2>
+        <div class="content has-text-justified">
+          <p>
+            We benchmark 12 Code LLMs on RepoST-Eval to evaluate their abilities to generate code in real GitHub repositories.
+          </p>
+          <img src="static/images/table5.png" alt="Evaluation Results">
+          <p class="has-text-centered">Table 2: Evaluation Results on RepoST-Eval</p>
+
+          <img src="static/images/table6.png" alt="Additional Results">
+          <p class="has-text-centered">Table 3: Additional Evaluation Results</p>
+
+          <p>Results show that:</p>
+          <ul>
+            <li>Our benchmark is able to distinguish different models. The best model (GPT-4o) only achieves 39.53 Pass@1, which shows that our benchmark is challenging and has a large room for improvement.</li>
+            <li>Models achieve much higher performance when provided with generated docstrings. One possible explanation is that the quality of human-written docstrings varies widely (on average 36.82/3.95 tokens/lines). Some docstrings may only contain limited information, while the generated docstrings generally contain more details (on average 130.84/9.92 tokens/lines).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code and Data -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Code and Data</h2>
+        <div class="content has-text-justified">
+          <p>
+            Both the code of RepoST and the RepoST-Train/Eval datasets (including the docker environment) are available on GitHub.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
