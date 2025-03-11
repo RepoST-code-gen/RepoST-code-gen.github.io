@@ -67,7 +67,7 @@
             <div class="publication-links">
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/RepoST-code-gen/RepoST"
+                <a href="https://github.com/yiqingxyq/RepoST"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -87,7 +87,7 @@
               </span>
               <!-- Data Link. -->
               <span class="link-block">
-                <a href="#"
+                <a href="https://drive.google.com/drive/folders/1x9nikZvhyyJlthAOGthUB1us1HdZdj3U?usp=sharing"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -104,14 +104,6 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Overview Figure -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <img src="static/images/figure1.png" alt="RepoST Framework Overview">
-        <p class="has-text-centered">Figure 1: Overview of the RepoST Framework</p>
-      </div>
-    </div>
-
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -124,10 +116,23 @@
       </div>
     </div>
     <!--/ Abstract. -->
+    <!-- Overview Figure -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div style="width: 100%; margin: 2em 0;">
+          <img src="static/images/figure1.png" alt="RepoST Framework Overview" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 1em;">Figure 1: Overview of the RepoST Framework</p>
+        </div>
+        <br>
+      </div>
+    </div>
+    <br>
+  
 
     <!-- The RepoST Framework -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+
         <h2 class="title is-3">The RepoST Framework</h2>
         <div class="content has-text-justified">
 
@@ -154,12 +159,18 @@
       </div>
     </div>
 
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div style="width: 100%; margin: 2em 0;">
+          <img src="static/images/figure2.png" alt="Training and Evaluation Environments" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 1em;">Figure 2: Training and Evaluation Environments Construction</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Training/Evaluation Environments -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <img src="static/images/figure2.png" alt="Training and Evaluation Environments">
-        <p class="has-text-centered">Figure 2: Training and Evaluation Environments Construction</p>
-        
         <h2 class="title is-3">Constructing Training / Evaluation Environments with RepoST</h2>
         <div class="content has-text-justified">
           <p>
@@ -185,12 +196,18 @@
       </div>
     </div>
 
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div style="width: 100%; margin: 2em 0;">
+          <img src="static/images/table1.png" alt="Training Results" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 1em;">Table 1: Training Results on Different Benchmarks</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Training Results -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <img src="static/images/table1.png" alt="Training Results">
-        <p class="has-text-centered">Table 1: Training Results on Different Benchmarks</p>
-
         <h2 class="title is-3">Experiments: Training with RepoST-Train</h2>
         <div class="content has-text-justified">
           <p>
@@ -207,25 +224,36 @@
       </div>
     </div>
 
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div style="width: 100%; margin: 2em 0;">
+          <img src="static/images/table5.png" alt="Evaluation Results" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 1em;">Table 2: Evaluation Results on RepoST-Eval</p>
+        </div>
+      </div>
+    </div>
+
     <!-- Evaluation Results -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Experiments: Evaluation with RepoST-Eval</h2>
         <div class="content has-text-justified">
           <p>
-            We benchmark 12 Code LLMs on RepoST-Eval to evaluate their abilities to generate code in real GitHub repositories.
+            We benchmark 12 Code LLMs on RepoST-Eval to evaluate their abilities to generate code in real GitHub repositories. Results show that:
           </p>
-          <img src="static/images/table5.png" alt="Evaluation Results">
-          <p class="has-text-centered">Table 2: Evaluation Results on RepoST-Eval</p>
-
-          <img src="static/images/table6.png" alt="Additional Results">
-          <p class="has-text-centered">Table 3: Additional Evaluation Results</p>
-
-          <p>Results show that:</p>
           <ul>
             <li>Our benchmark is able to distinguish different models. The best model (GPT-4o) only achieves 39.53 Pass@1, which shows that our benchmark is challenging and has a large room for improvement.</li>
             <li>Models achieve much higher performance when provided with generated docstrings. One possible explanation is that the quality of human-written docstrings varies widely (on average 36.82/3.95 tokens/lines). Some docstrings may only contain limited information, while the generated docstrings generally contain more details (on average 130.84/9.92 tokens/lines).</li>
           </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div style="width: 100%; margin: 2em 0;">
+          <img src="static/images/table6.png" alt="Additional Results" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 1em;">Table 3: Additional Evaluation Results</p>
         </div>
       </div>
     </div>
@@ -236,7 +264,7 @@
         <h2 class="title is-3">Code and Data</h2>
         <div class="content has-text-justified">
           <p>
-            Both the code of RepoST and the RepoST-Train/Eval datasets (including the docker environment) are available on GitHub.
+            Both the code of RepoST and the RepoST-Train/Eval datasets (with their docker images) are available on <a href="https://github.com/yiqingxyq/RepoST">GitHub</a>.
           </p>
         </div>
       </div>
