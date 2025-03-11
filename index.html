@@ -42,7 +42,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">RepoST: Scalable Repository-Level Coding Environment Construction with Sandbox Testing</h1>
+          <h1 class="title is-2 publication-title">RepoST: Scalable Repository-Level Coding Environment Construction with Sandbox Testing</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="#">Yiqing Xie</a><sup>1</sup>,</span>
@@ -107,7 +107,7 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-4">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             We present RepoST, a scalable method to construct environments that provide execution feedback for repository-level code generation for both training and evaluation. Unlike existing works that aim to build entire repositories for execution, which is challenging for both human and LLMs, we provide execution feedback with sandbox testing, which isolates a given target function and its dependencies to a separate script for testing. Sandbox testing reduces the complexity of external dependencies and enables constructing environments at a large scale. We use our method to construct RepoST-Train, a large-scale train set with 7,415 functions from 832 repositories. Training with the execution feedback provided by RepoST-Train leads to a performance gain of 5.5% Pass@1 on HumanEval and 3.5% Pass@1 on RepoEval. We also build an evaluation dataset, RepoST-Eval, and benchmark 12 code generation models.
@@ -119,9 +119,9 @@
     <!-- Overview Figure -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <div style="width: 100%; margin: 2em 0;">
-          <img src="static/images/figure1.png" alt="RepoST Framework Overview" style="width: 100%; height: auto; display: block;">
-          <p class="has-text-centered" style="margin-top: 1em;">Figure 1: Overview of the RepoST Framework</p>
+        <div style="width: 100%; margin: 0em 0;">
+          <img src="static/images/figure1.png" alt="Overview of the RepoST Framework" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 0em;">Figure 1. Training and Evaluation with RepoST</p>
         </div>
         <br>
       </div>
@@ -133,7 +133,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
 
-        <h2 class="title is-3">The RepoST Framework</h2>
+        <h2 class="title is-4">The RepoST Framework</h2>
         <div class="content has-text-justified">
 
           <p>
@@ -161,17 +161,18 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <div style="width: 100%; margin: 2em 0;">
-          <img src="static/images/figure2.png" alt="Training and Evaluation Environments" style="width: 100%; height: auto; display: block;">
-          <p class="has-text-centered" style="margin-top: 1em;">Figure 2: Training and Evaluation Environments Construction</p>
+        <div style="width: 100%; margin: 0em 0;">
+          <img src="static/images/figure2.png" alt="Training and Evaluation Environments Construction" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 1em;">Figure 2. Overview of the RepoST Framework for Execution-based Environments Construction</p>
         </div>
       </div>
     </div>
+    <br><br>
 
     <!-- Training/Evaluation Environments -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Constructing Training / Evaluation Environments with RepoST</h2>
+        <h2 class="title is-4">Constructing Training / Evaluation Environments with RepoST</h2>
         <div class="content has-text-justified">
           <p>
             With our framework, we build a train set and an evaluation set: RepoST-Train and RepoST-Eval.
@@ -198,17 +199,18 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <div style="width: 100%; margin: 2em 0;">
-          <img src="static/images/table1.png" alt="Training Results" style="width: 100%; height: auto; display: block;">
-          <p class="has-text-centered" style="margin-top: 1em;">Table 1: Training Results on Different Benchmarks</p>
+        <div style="width: 100%; margin: 0em 0;">
+          <img src="static/images/table1.png" alt="Training Results on Different Benchmarks" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 1em;">Table 1 - 2. Dataset Statistics</p>
         </div>
       </div>
     </div>
+    <br><br>
 
     <!-- Training Results -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Experiments: Training with RepoST-Train</h2>
+        <h2 class="title is-4">Experiments: Training with RepoST-Train</h2>
         <div class="content has-text-justified">
           <p>
             With RepoST-Train, we can first train the model with supervised finetuning (SFT), with the code context as the input and the ground truth target function as the output. The execution feedback provided by our RepoST evaluation scripts allows us to employ the rejection sampling algorithm and further finetune the model on correct model-generated solutions.
@@ -226,17 +228,18 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <div style="width: 100%; margin: 2em 0;">
-          <img src="static/images/table5.png" alt="Evaluation Results" style="width: 100%; height: auto; display: block;">
-          <p class="has-text-centered" style="margin-top: 1em;">Table 2: Evaluation Results on RepoST-Eval</p>
+        <div style="width: 100%; margin: 0em 0;">
+          <img src="static/images/table5.png" alt="Evaluation Results on RepoST-Eval" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 1em;">Table 5. Training on RepoST-Train and Evaluating on Public Benchmarks.</p>
         </div>
       </div>
     </div>
+    <br><br>
 
     <!-- Evaluation Results -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Experiments: Evaluation with RepoST-Eval</h2>
+        <h2 class="title is-4">Experiments: Evaluation with RepoST-Eval</h2>
         <div class="content has-text-justified">
           <p>
             We benchmark 12 Code LLMs on RepoST-Eval to evaluate their abilities to generate code in real GitHub repositories. Results show that:
@@ -251,17 +254,18 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <div style="width: 100%; margin: 2em 0;">
-          <img src="static/images/table6.png" alt="Additional Results" style="width: 100%; height: auto; display: block;">
-          <p class="has-text-centered" style="margin-top: 1em;">Table 3: Additional Evaluation Results</p>
+        <div style="width: 100%; margin: 0em 0;">
+          <img src="static/images/table6.png" alt="Additional Evaluation Results" style="width: 100%; height: auto; display: block;">
+          <p class="has-text-centered" style="margin-top: 1em;">Table 6 - 8. Evaluation Results on RepoST-Eval</p>
         </div>
       </div>
     </div>
+    <br><br>
 
     <!-- Code and Data -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Code and Data</h2>
+        <h2 class="title is-4">Code and Data</h2>
         <div class="content has-text-justified">
           <p>
             Both the code of RepoST and the RepoST-Train/Eval datasets (with their docker images) are available on <a href="https://github.com/yiqingxyq/RepoST">GitHub</a>.
