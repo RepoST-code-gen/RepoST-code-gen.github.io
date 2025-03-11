@@ -128,23 +128,20 @@
           <img src="static/images/figure1.png" alt="RepoST Framework Overview">
           <p class="has-text-centered">Figure 1: Overview of the RepoST Framework</p>
           
-          <h4 class="title is-4">Original GitHub Repo as Context</h4>
           <p>
-            As shown in Figure 1, the models generate the target function with the entire GitHub repository as context. We then use the evaluation script to obtain execution feedback.
+            <b>Original GitHub Repo as Context</b>: As shown in Figure 1, the models generate the target function with the entire GitHub repository as context. We then use the evaluation script to obtain execution feedback.
           </p>
 
-          <h4 class="title is-4">High Scalability</h4>
           <p>
-            Compared to integration testing used by previous datasets, we highlight the benefits of sandbox testing in constructing scalable coding environments:
+            <b>High Scalability</b>: Compared to integration testing used by previous datasets, we highlight the benefits of sandbox testing in constructing scalable coding environments:
           </p>
           <ul>
             <li>In general, the external dependencies of a function are typically much simpler than a repository. By isolating the function and its local dependencies, we can execute the function by only installing the necessary packages.</li>
             <li>If any execution error occurs, we can debug the separate scripts without modifying the original repository.</li>
           </ul>
 
-          <h4 class="title is-4">Carefully-Designed Quality Check Strategies</h4>
           <p>
-            We iteratively resolve environment or runtime errors and improve test coverage. We also conduct execution-based, AST-based, and LLM-based quality checks and only keep examples where the functionality of the sandboxed function does not alter and the tests are valid, reasonable, and have high coverage.
+            <b>Carefully-Designed Quality Check Strategies</b>: We iteratively resolve environment or runtime errors and improve test coverage. We also conduct execution-based, AST-based, and LLM-based quality checks and only keep examples where the functionality of the sandboxed function does not alter and the tests are valid, reasonable, and have high coverage.
           </p>
         </div>
       </div>
