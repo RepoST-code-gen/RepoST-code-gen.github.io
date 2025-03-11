@@ -122,11 +122,12 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">The RepoST Framework</h2>
         <div class="content has-text-justified">
+          <img src="static/images/figure1.png" alt="RepoST Framework Overview">
+          <p class="has-text-centered">Figure 1: Overview of the RepoST Framework</p>
+
           <p>
             RepoST is an automated framework that constructs repo-level coding environments using Sandbox Testing. Specifically, given a function in a GitHub repository, we sandbox the function and its local dependencies to a separate script and generate tests with an LLM.
           </p>
-          <img src="static/images/figure1.png" alt="RepoST Framework Overview">
-          <p class="has-text-centered">Figure 1: Overview of the RepoST Framework</p>
           
           <p>
             <b>Original GitHub Repo as Context</b>: As shown in Figure 1, the models generate the target function with the entire GitHub repository as context. We then use the evaluation script to obtain execution feedback.
@@ -150,13 +151,14 @@
     <!-- Training/Evaluation Environments -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+        <img src="static/images/figure2.png" alt="Training and Evaluation Environments">
+        <p class="has-text-centered">Figure 2: Training and Evaluation Environments Construction</p>
+        
         <h2 class="title is-3">Constructing Training / Evaluation Environments with RepoST</h2>
         <div class="content has-text-justified">
           <p>
             With our framework, we build a train set and an evaluation set: RepoST-Train and RepoST-Eval.
           </p>
-          <img src="static/images/figure2.png" alt="Training and Evaluation Environments">
-          <p class="has-text-centered">Figure 2: Training and Evaluation Environments Construction</p>
 
           <p>
             To our knowledge, RepoST-Train is currently the largest repo-level code generation dataset with execution support, with 7,415 functions sampled from 824 repositories. The large scale enables training on RepoST-Train and evaluating on other benchmarks such as RepoEval or HumanEval.
@@ -166,9 +168,8 @@
             RepoST-Eval contains 296 functions sampled from 99 repositories. Because RepoST is fully automated, it can be potentially used to construct live benchmarks to avoid contamination issues.
           </p>
 
-          <h4 class="title is-4">Human Studies</h4>
           <p>
-            We conduct careful quality verification with two human studies:
+            We conduct careful quality verification with two <b>human studies</b>:
           </p>
           <ul>
             <li>The first human study demonstrates the agreement between human and LLM-based quality checkers, which indicates that after applying our filtering strategies for quality control, the remaining examples have high quality.</li>
@@ -181,13 +182,14 @@
     <!-- Training Results -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
+        <img src="static/images/table1.png" alt="Training Results">
+        <p class="has-text-centered">Table 1: Training Results on Different Benchmarks</p>
+
         <h2 class="title is-3">Experiments: Training with RepoST-Train</h2>
         <div class="content has-text-justified">
           <p>
             With RepoST-Train, we can first train the model with supervised finetuning (SFT), with the code context as the input and the ground truth target function as the output. The execution feedback provided by our RepoST evaluation scripts allows us to employ the rejection sampling algorithm and further finetune the model on correct model-generated solutions.
           </p>
-          <img src="static/images/table1.png" alt="Training Results">
-          <p class="has-text-centered">Table 1: Training Results on Different Benchmarks</p>
 
           <p>We train our model with RepoST-Train and evaluate on HumanEval, RepoEval-Func, and RepoST-Eval. Results show that:</p>
           <ul>
